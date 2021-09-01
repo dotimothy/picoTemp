@@ -8,6 +8,7 @@ When the **Green** Led Turns On, that means the temperature is **below** the thr
 ## Things to Work On / Improve
 1. Design of the Chassis should be More Portable & Sustainable
 2. Thersehold should be adjusted manually by the user (e.g. adding a potentiometer)
+3. Temperature could be displayed to the user (requires external display)
 
 This is A Good Starting Project for Learning the Raspberry Pi Pico!
 
