@@ -6,6 +6,7 @@ To Start, Please Connect a Green LED Diode to GPIO Pin 0 & Corresponding Ground 
 The Other Python Files are use to assist main.py & some debugging tests.
 
 When the **Green** Led Turns On, that means the temperature is **below** the threshold temperature, Red Otherwise.
+<br></br> 
 <img src="console.PNG">
 ## Things to Work On / Improve
 1. Design of the Chassis should be More Portable & Sustainable
