@@ -5,8 +5,14 @@
 
 import temp
 import utime
+import test
 
 while(1):
-    temp.tempLED(100)
-    utime.sleep(10)
-    
+    try:
+        temp.tempLED(80)
+        utime.sleep(10)
+    except KeyboardInterrupt:
+        break
+
+print("Cleaning All GPIO Pins")
+test.clean()
