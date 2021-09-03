@@ -14,5 +14,5 @@ This is A Good Starting Project for Learning the Raspberry Pi Pico!
 
 Note: There is a Hard Coded Temperature Threshold of 80° F
 
-A Fan was placed in the Schematic to Cool the CPU to produce the most accurate comparision with Ambient Air Temperature.
+A Fan was placed in the Schematic to Cool the CPU to produce the most accurate comparison with Ambient Air Temperature.
  
