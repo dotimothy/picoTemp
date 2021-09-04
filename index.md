@@ -1,37 +1,21 @@
-## Welcome to GitHub Pages
+# picoTemp
+## An LED Temperature Indicator Using the Raspberry Pi Pico
+<img src="picoTemp.gif"/>
+To Start, Please Connect a Green LED Diode to GPIO Pin 0 & Corresponding Ground & Connect a Red LED Diode to GPIO Pin 15 and Ground. Afterwards, connect a USB Power Source (e.g. Battery Pack), to see it work! (Runs main.py) by default.
 
-You can use the [editor on GitHub](https://github.com/dotimothy/picoTemp/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+The Other Python Files are use to assist main.py & some debugging tests.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+When the **Green** Led Turns On, that means the temperature is **below** the threshold temperature, Red Otherwise.
+<br></br> 
+<img src="console.PNG">
+## Things to Work On / Improve
+1. Design of the Chassis should be More Portable & Sustainable
+2. Thersehold should be adjusted manually by the user (e.g. adding a potentiometer)
+3. Temperature could be displayed to the user (requires external display)
 
-### Markdown
+This is A Good Starting Project for Learning the Raspberry Pi Pico!
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Note: There is a Hard Coded Temperature Threshold of 80° F
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/dotimothy/picoTemp/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+A Fan was placed in the Schematic to Cool the CPU to produce the most accurate comparison with Ambient Air Temperature.
+ 
