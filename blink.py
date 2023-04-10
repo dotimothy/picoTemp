@@ -17,6 +17,17 @@ def blink(led):
     off(led)
     utime.sleep(0.05)
 
+def square(led,freq,duration):
+    for i in range(round(duration*freq/2)):
+        on(led)
+        utime.sleep(1/freq)
+        off(led)
+        utime.sleep(1/freq)
+        
+if __name__ ==  '__main__':
+    speaker = machine.Pin(16,machine.Pin.OUT)
+    square(speaker,500,10)
+    
 
 
 

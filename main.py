@@ -7,9 +7,10 @@ import temp
 import utime
 import test
 
+test.clean()
 while(1):
     try:
-        temp.tempLED(80)
+        temp.tempLED(70)
         utime.sleep(10)
     except KeyboardInterrupt:
         break
