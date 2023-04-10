@@ -5,11 +5,11 @@
 import machine
 import utime
 
-def on(led):
-    led.value(1)
+def on(pin):
+    # Turn On Pin
     
-def off(led):
-    led.value(0)
+def off(pin):
+    # Turn Off Pin
 
 def blink(led):
     on(led)
@@ -19,10 +19,10 @@ def blink(led):
 
 def square(speaker,freq,duration):
     for i in range(round(duration*freq/2)):
-        on(speaker)
-        utime.sleep(1/freq)
-        off(speaker)
-        utime.sleep(1/freq)
+        # Turn on Speaker
+        # Pause for One Period
+        # Turn off Speaker
+        # Pause for One Period
         
 if __name__ ==  '__main__':
     speaker = machine.Pin(16,machine.Pin.OUT)
