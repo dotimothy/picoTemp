@@ -14,9 +14,10 @@ import test
 #Global Variables
 sense = machine.ADC(4)
 factor = #Represent 3.3V with 16 bits 
-red = machine.Pin(15,machine.Pin.OUT)
-speaker = machine.Pin(13,machine.Pin.OUT)
-green = machine.Pin(0,machine.Pin.OUT)
+red = machine.Pin(15,machine.Pin.OUT) #Red LED
+speaker = machine.Pin(13,machine.Pin.OUT) #DC Buzzer
+fan = machine.Pin(3,machine.Pin.OUT) #3.3V Fan
+green = machine.Pin(0,machine.Pin.OUT) #Buzzer
 
 #Voltage Conversions Specific to Sensor
 def voltToCel(voltage):
@@ -38,13 +39,12 @@ def tempLED(limit):
         print(str(loop) + ". Temp on Pico: \n" + str(voltToFar(volt)) + "° F\n" + str(voltToCel(volt)) + "° C\n" + str(voltToKel(volt)) + "° K\n")
         if(voltToFar(volt) >= limit):
             print("Too Hot!\n")
-            #Turn on Red LED, Turn the Speaker on for One Second with Freq 500 Hz, and Turn Off Green LED
+            #Turn on Red LED, Turn on DC Buzzer, Turn off Fan and Turn Off Green LED
         else:
             print("Good!\n")
-            #Turn on Green LED, Turn Off Red LED
+            #Turn on Green LED, Turn Off everything else.
         utime.sleep(1)
-    blink.off(red)
-    blink.off(green)
+    #Turn off All Components
     test.clean()
     print("Done")
     

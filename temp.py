@@ -4,6 +4,7 @@
 # v1.0: Added Helper Voltage Functions, converting ADC to Temperatures (7/7/21)
 # v1.1: Made Threshold Voltage a parameter rather than input (7/14/21)
 # v1.2: Added a speaker output to alert the user of high temperature (4/10/2023)
+# v1.3: Replaced Speaker square wave with DC buzzer, Added Fan (05/10/2023)
 
 
 import machine
@@ -14,9 +15,10 @@ import test
 #Global Variables
 sense = machine.ADC(4)
 factor = 3.3 /  65535
-red = machine.Pin(15,machine.Pin.OUT)
-speaker = machine.Pin(13,machine.Pin.OUT)
-green = machine.Pin(0,machine.Pin.OUT)
+red = machine.Pin(15,machine.Pin.OUT) #Red LED
+speaker = machine.Pin(13,machine.Pin.OUT) #DC Buzzer
+fan = machine.Pin(3,machine.Pin.OUT) #3.3V Fan
+green = machine.Pin(0,machine.Pin.OUT) #Buzzer
 
 #Voltage Conversions Specific to Sensor
 def voltToCel(voltage):
@@ -39,15 +41,20 @@ def tempLED(limit):
         if(voltToFar(volt) >= limit):
             print("Too Hot!\n")
             blink.on(red)
-            blink.square(speaker,500,1)
+            #blink.square(speaker,500,1)
+            blink.on(speaker)
             blink.off(green)
         else:
             print("Good!\n")
             blink.on(green)
             blink.off(red)
+            blink.off(buzzer)
+            blink.off(fan)
         utime.sleep(1)
     blink.off(red)
     blink.off(green)
+    blink.off(buzzer)
+    blink.off(fan)
     test.clean()
     print("Done")
     
