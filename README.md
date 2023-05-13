@@ -11,7 +11,7 @@ All the negative leads of the above components will go to ground (GND). <br>
 
 There is a specific configuration for the fan to allow more output current via a relay: <br>
 Fan Relay 'In' -> GPIO Pin 3 (Physical 5)<br>
-Fan Relay DC '+' -> 3.3V V_Out (Physical 36) <br>
+Fan Relay DC '+' -> 5 V_Out (Physical 40) <br>
 Fan Relay DC '-' -> GND <br>
 Fan Relay 'NC' -> GND <br>
 Fan Relay 'NO' -> 5V V_bus (Physical 40) <Br>
