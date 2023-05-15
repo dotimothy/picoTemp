@@ -34,7 +34,7 @@ def tempLED(limit):
     blink.off(red)
     blink.off(green)
     loop = 0
-    while(loop <= 100):
+    while(loop <= 25):
         loop = loop + 1
         volt = sense.read_u16() * factor
         print(str(loop) + ". Temp on Pico: \n" + str(voltToFar(volt)) + "° F\n" + str(voltToCel(volt)) + "° C\n" + str(voltToKel(volt)) + "° K\n")
@@ -48,12 +48,12 @@ def tempLED(limit):
             print("Good!\n")
             blink.on(green)
             blink.off(red)
-            blink.off(buzzer)
+            blink.off(speaker)
             blink.off(fan)
-        utime.sleep(1)
+        utime.sleep(4)
     blink.off(red)
     blink.off(green)
-    blink.off(buzzer)
+    blink.off(speaker)
     blink.off(fan)
     test.clean()
     print("Done")
